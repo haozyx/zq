@@ -1,0 +1,67 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path" : "pages/list2detail-list/list2detail-list",
+			"style": {
+				"navigationBarTitleText": "列表到详情示例",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path" : "pages/list2detail-detail/list2detail-detail",
+			"style": {
+				"navigationBarTitleText": "详情",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
+			}
+		}
+	    ,{
+            "path" : "pages/classify/classify",
+            "style": {
+            	"navigationBarTitleText": "分类",
+            	"app-plus": {
+            		"titleNView": false
+            	}
+            }
+        }
+        ,{
+            "path" : "pages/me/me",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "手赚",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar":{
+		"color":"#bfbfbf",
+		"selectedColor":"#515151",
+		"borderStyle":"black",
+		"backgroundColor":"#FFFFFF",
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"text":"首页",
+				"iconPath":"static/img/tabbar/heart.png",
+				"selectedIconPath":"static/img/tabbar/heart_sel.png"
+			},
+			{
+				"pagePath":"pages/me/me",
+				"text":"我的",
+				"iconPath":"static/img/tabbar/me.png",
+				"selectedIconPath":"static/img/tabbar/me_sel.png"
+			}
+		]
+	}
+}

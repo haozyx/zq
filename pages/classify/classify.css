@@ -1,0 +1,22 @@
+/* 滚动分类 start */
+.tab-item {
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	text-align: center;
+	display: inline-block;
+}
+.active text {
+	padding: 10upx 16upx;
+	color: red;
+	border-bottom: 1px solid red;
+}
+
+.gundong {
+	width: 100%;
+	white-space: nowrap;
+	height: 40px;
+	background-color: #FFFFFF;
+}
+/* 滚动分类 end */
