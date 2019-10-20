@@ -1,13 +1,13 @@
 <script>
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			//console.log('App Launch')
 		},
 		onShow: function() {
-			console.log('App Show')
+			//console.log('App Show')
 		},
 		onHide: function() {
-			console.log('App Hide')
+			//console.log('App Hide')
 		}
 	}
 </script>
@@ -29,13 +29,22 @@
 	}
 	/* 线条 */
 	.line-wrap {
-		padding: 0upx 40upx;
+		padding: 0upx 35upx;
 	}
 	.line {
+		height: 1px;
 		background-color: #e3e3e3;
 	}
 	/* 这是隐藏滚动条的，在单个页面设置不管用 */
 	::-webkit-scrollbar {
 		display: none;
+	}
+	/* 导航栏占据高度 */
+	.navheight{
+		/* height: var(--status-bar-height); */
+		height: 30px;
+		width: 100%;
+		background: #FFFFFF;
+		z-index: 100;
 	}
 </style>

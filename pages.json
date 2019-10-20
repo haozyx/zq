@@ -7,13 +7,6 @@
 			}
 		},
 		{
-			"path" : "pages/list2detail-list/list2detail-list",
-			"style": {
-				"navigationBarTitleText": "列表到详情示例",
-				"enablePullDownRefresh": true
-			}
-		},
-		{
 			"path" : "pages/list2detail-detail/list2detail-detail",
 			"style": {
 				"navigationBarTitleText": "详情",
@@ -29,12 +22,24 @@
             "style": {
             	"navigationBarTitleText": "分类",
             	"app-plus": {
-            		"titleNView": false
+            		"titleNView": true
             	}
             }
         }
         ,{
             "path" : "pages/me/me",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/registerLogin/registerLogin",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/activecode/activecode",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/vipnote/vipnote",
             "style" : {}
         }
     ],
@@ -46,15 +51,15 @@
 	},
 	"tabBar":{
 		"color":"#bfbfbf",
-		"selectedColor":"#515151",
+		"selectedColor":"#DC143C",
 		"borderStyle":"black",
 		"backgroundColor":"#FFFFFF",
 		"list":[
 			{
 				"pagePath":"pages/index/index",
 				"text":"首页",
-				"iconPath":"static/img/tabbar/heart.png",
-				"selectedIconPath":"static/img/tabbar/heart_sel.png"
+				"iconPath":"static/img/tabbar/main.png",
+				"selectedIconPath":"static/img/tabbar/main_sel.png"
 			},
 			{
 				"pagePath":"pages/me/me",

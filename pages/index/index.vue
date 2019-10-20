@@ -12,33 +12,17 @@
 		 <view class="classify">
 			 <block v-for="(clz,index) in classifyarry" :key="index">
 				 <view class="clzwraper" @tap="gotoclassify">
-					<image src="../../static/img/meiri.png" class="clzimg"></image>
-					<view class="clztext">{{clz}}</view>
+					<image :src="clz.img" class="clzimg"></image>
+					<view class="clztext">{{clz.name}}</view>
 				 </view>
 			  </block>
 		 </view>
 		<!-- 分类导航  end-->
 		
 		<!-- 显示推荐或者置顶的信息 start-->
-			<view class="uni-list">
-			    <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(value,key) in listData" :key="key"
-			        @click="goDetail(value)">
-			        <view class="uni-media-list">
-			            <image class="uni-media-list-logo" :src="value.cover"></image>
-			            <view class="uni-media-list-body">
-			                <view class="uni-media-list-text-top">{{value.title}}</view>
-			                <view class="uni-media-list-text-bottom">
-			                    <text>{{value.author_name}}</text>
-			                    <text>{{value.published_at}}</text>
-			                </view>
-			            </view>
-			        </view>
-			    </view>
-			</view>
-		
+			<mlist :listdata='clist'></mlist>
 		<!-- 显示推荐或者置顶的信息 end-->
 		
-		<mlist></mlist>
 	</view>
 </template>
 
@@ -48,34 +32,87 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello',
-				classifyarry:['每日任务','进阶培训','虚拟赚钱','新手推荐','网赚思路','VIP项目'],
-				bannerimgarry:['https://haozy.yohaoyun.com/yohaoyun/banner/banner1.jpg','https://haozy.yohaoyun.com/yohaoyun/banner/banner1.jpg'],
+				isLogin:false,
+				userObj:{},
+				page:1,
+				pagesize:10,
+				totalpage:0,
+				clist:[],
+				classifyarry:[
+					{'id':1,'name':'每日任务','img':'../../static/img/meiri.png'},
+					{'id':2,'name':'进阶培训','img':'../../static/img/peixun.png'},
+					{'id':3,'name':'虚拟赚钱','img':'../../static/img/xuni.png'},
+					{'id':4,'name':'新手推荐','img':'../../static/img/tuijian.png'},
+					{'id':5,'name':'网赚思路','img':'../../static/img/silu.png'},
+					{'id':6,'name':'VIP项目','img':'../../static/img/vip.png'},
+					{'id':7,'name':'新手指南','img':'../../static/img/zhinan.png'}],
+				bannerimgarry:['../../static/img/banner.jpg','../../static/img/banner.jpg'],
 			}
 		},
 		components:{
 			mlist
 		},
 		onLoad() {
-			this.test();
+			this.getme();
+			this.getlist();
 		},
 		methods: {
+			getlist(){
+				var me = this;
+				
+				uni.request({
+					url:  me.webUrl +'list',
+					method: 'GET',
+					data: {page:me.page,pagesize:me.pagesize,category:'3'},
+					success: res => {
+						console.log(res);
+						if(res.data.code ==200){
+							me.totalpage = res.data.totalpage;
+							me.clist = res.data.list;
+						}
+					},
+					fail: () => {},
+					complete: () => {}
+				});
+			},
 			gotoclassify(){
-				uni.redirectTo({
-					url: '../classify/classify'
+				uni.navigateTo({
+					url: '/pages/classify/classify'
 				});
 			}, 
-			test(){
+			getme(){
 				var me = this;
-				this.$http.request({
-				  url:  me.webUrl + 'getcode',
-				  method: 'get'
-				}).then(res=>{
-				  // do something...
-				  console.log(res);
-				}).catch(err=>{
-				  // do something...
-				}) 
+				var user = me.getGlobalUser();
+				//uni.clearStorage();
+				console.info(user);
+				if(user){
+					me.isLogin = true;
+					me.userobj = user;
+					me.getme();  //是会员的话再去校验
+					
+				}else{
+					me.isLogin = false;
+					me.userobj={};
+				}
+			},
+			validate(){
+				var me = this;
+				uni.request({
+					url: me.webUrl + 'getuserstatus',
+					method: 'GET',
+					data: {id:me.userobj.id},
+					success: res => {
+						if(res.data.code == 200){
+							var user = res.data.user;
+							me.userobj =user;
+							uni.setStorageSync("globalUser",user);
+							console.log(user);
+						}
+					},
+					fail: () => {},
+					complete: () => {}
+				});
+				
 			}
 		}
 	}

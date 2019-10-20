@@ -1,5 +1,6 @@
 <template>
 	<view class="page">
+		<view class="navspace"></view>
 		<scroll-view scroll-x="true" class="gundong">
 			<block v-for="(item,index) in tabarry" :key="index">
 				<view class="tab-item" :data-index="index" @tap="getcurlist" :class="currindex==index ?'active':''">
@@ -7,6 +8,10 @@
 				</view>
 			</block>
 		</scroll-view>
+		
+		<!-- 空白区域 -->
+		<view class="whitespace"></view>
+		
 		
 		<!-- 分类信息 -->
 		<mlist></mlist>

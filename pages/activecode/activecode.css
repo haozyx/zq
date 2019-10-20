@@ -1,0 +1,19 @@
+.activewrap{
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+	padding-top: 40upx;
+	align-items: center;
+}
+.text{
+	width: 80%;
+	padding: 30upx 20upx;
+	background: #F7F7F7;
+}
+
+.button{
+	margin-top: 20px;
+	width: 80%;
+	border-radius: 20px;
+	background: #DC143C;
+}
