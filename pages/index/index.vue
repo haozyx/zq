@@ -11,7 +11,7 @@
 		 <!-- 分类导航  start-->
 		 <view class="classify">
 			 <block v-for="(clz,index) in classifyarry" :key="index">
-				 <view class="clzwraper" @tap="gotoclassify">
+				 <view class="clzwraper" @tap="gotoclassify" :data-id="clz.id">
 					<image :src="clz.img" class="clzimg"></image>
 					<view class="clztext">{{clz.name}}</view>
 				 </view>
@@ -20,7 +20,7 @@
 		<!-- 分类导航  end-->
 		
 		<!-- 显示推荐或者置顶的信息 start-->
-			<mlist :listdata='clist'></mlist>
+			<mlist :listdata='clist' :hasData="hasData"></mlist>
 		<!-- 显示推荐或者置顶的信息 end-->
 		
 	</view>
@@ -38,6 +38,7 @@
 				pagesize:10,
 				totalpage:0,
 				clist:[],
+				hasData: false,
 				classifyarry:[
 					{'id':1,'name':'每日任务','img':'../../static/img/meiri.png'},
 					{'id':2,'name':'进阶培训','img':'../../static/img/peixun.png'},
@@ -46,7 +47,7 @@
 					{'id':5,'name':'网赚思路','img':'../../static/img/silu.png'},
 					{'id':6,'name':'VIP项目','img':'../../static/img/vip.png'},
 					{'id':7,'name':'新手指南','img':'../../static/img/zhinan.png'}],
-				bannerimgarry:['../../static/img/banner.jpg','../../static/img/banner.jpg'],
+				bannerimgarry:['../../static/img/banner.png','../../static/img/banner.png'],
 			}
 		},
 		components:{
@@ -65,30 +66,36 @@
 					method: 'GET',
 					data: {page:me.page,pagesize:me.pagesize,category:'3'},
 					success: res => {
-						console.log(res);
+						//console.log(res);
 						if(res.data.code ==200){
 							me.totalpage = res.data.totalpage;
-							me.clist = res.data.list;
+							if(res.data.list == ''){
+								me.hasData= true;
+							}else{
+								me.hasData = false;
+								me.clist = me.clist.concat(res.data.list);
+							}
 						}
 					},
 					fail: () => {},
 					complete: () => {}
 				});
 			},
-			gotoclassify(){
+			gotoclassify(e){
+				var category = e.currentTarget.dataset.id;
 				uni.navigateTo({
-					url: '/pages/classify/classify'
+					url: '/pages/classify/classify?category='+category
 				});
 			}, 
 			getme(){
 				var me = this;
 				var user = me.getGlobalUser();
 				//uni.clearStorage();
-				console.info(user);
+				//console.info(user);
 				if(user){
 					me.isLogin = true;
 					me.userobj = user;
-					me.getme();  //是会员的话再去校验
+					me.validate();  //是会员的话再去校验
 					
 				}else{
 					me.isLogin = false;
@@ -106,7 +113,7 @@
 							var user = res.data.user;
 							me.userobj =user;
 							uni.setStorageSync("globalUser",user);
-							console.log(user);
+							//console.log(user);
 						}
 					},
 					fail: () => {},

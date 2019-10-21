@@ -17,12 +17,12 @@
 			
 			<view class="info-wapper" style="margin-top: 40upx;">
 				<label class="words-lbl">QQ</label>
-				<input name="qq" type="text" value="" class="input" placeholder="请输入QQ号" placeholder-class="graywords"/>
+				<input name="qq" type="text" value="" class="input" placeholder="请输入QQ号或者微信号" placeholder-class="graywords"/>
 			</view>
-			<view class="info-wapper" style="margin-top: 40upx;">
+		<!-- 	<view class="info-wapper" style="margin-top: 40upx;">
 				<label class="words-lbl">微信</label>
 				<input name="weixin" type="text" value="" class="input" placeholder="请输入微信号" placeholder-class="graywords"/>
-			</view>
+			</view> -->
 			
 			<button type="primary" form-type="submit" style="margin-top: 60upx;width: 90%;">注册/登录</button>
 		</form>
@@ -46,7 +46,7 @@
 				var weixin =e.detail.value.weixin;
 				
 				if(username && password){
-					if(!qq&&!weixin){
+					if(!qq){
 						uni.showToast({
 							title: 'QQ或微信必须输一个.',
 							icon:'none',

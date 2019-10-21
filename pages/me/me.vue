@@ -103,7 +103,7 @@
 			var me = this;
 			var user = me.getGlobalUser();
 			//uni.clearStorage();
-			console.info(user);
+			//console.info(user);
 			if(user){
 				me.isLogin = true;
 				me.userobj = user;
@@ -126,7 +126,7 @@
 							var user = res.data.user;
 							me.userobj =user;
 							uni.setStorageSync("globalUser",user);
-							console.log(user);
+							//console.log(user);
 						}
 					},
 					fail: () => {},

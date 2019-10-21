@@ -47,4 +47,13 @@
 		background: #FFFFFF;
 		z-index: 100;
 	}
+	.appimg{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	
+	.appimg img{
+		width: 95%;
+	}
 </style>

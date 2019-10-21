@@ -129,3 +129,14 @@
         flex-direction: row;
         justify-content: space-between;
     }
+	
+.zerolist{
+	height: 200upx;
+	width: 100%;
+	border-bottom: #F1F1F1 1px solid;
+}	
+.nodatac{
+	height: 200upx;
+	text-align: center;
+	line-height: 200upx;
+}
