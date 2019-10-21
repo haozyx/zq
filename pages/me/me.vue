@@ -101,17 +101,19 @@
 		},
 		onLoad() {
 			var me = this;
-			var user = me.getGlobalUser();
+			// var user = me.getGlobalUser();
+			// 这里不能调用全局方法,会比直接取的慢一点
+			var user = uni.getStorageSync('globalUser');
 			//uni.clearStorage();
-			//console.info(user);
-			if(user){
+			console.info(user);
+			if(user==null){
+				me.isLogin = false;
+				me.userobj={};
+			}else{
 				me.isLogin = true;
 				me.userobj = user;
 				me.getme();  //是会员的话再去校验
 				
-			}else{
-				me.isLogin = false;
-				me.userobj={};
 			}
 		},
 		methods: {

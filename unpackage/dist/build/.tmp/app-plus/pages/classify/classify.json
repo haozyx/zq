@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "分类",
+  "titleNView": true,
+  "usingComponents": {
+    "mlist": "/components/mlist/mlist"
+  }
+}

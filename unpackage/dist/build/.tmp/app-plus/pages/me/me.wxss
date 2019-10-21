@@ -1,0 +1,133 @@
+.page-fill {
+	width:100%;
+	height: 100%;
+	background: #FFFFFF;
+}
+
+/* 头部个人信息 start */
+.header {
+	
+	
+	padding: 120rpx 30rpx 40rpx 30rpx;
+	
+	background-color: #e05772;
+/* 	background-color: #FFC0CB; */
+/* 	background: url(http://122.152.205.72:88/group1/M00/00/03/CpoxxFwu_1OAYFAIAAAzO_Q1tPg693.png) repeat;
+	 */
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+}
+.face {
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 50%;
+	-webkit-flex-shrink: 0;
+	    -ms-flex-negative: 0;
+	        flex-shrink: 0;
+}
+.info-wapper {
+	width: 80%;
+	margin-left: 40rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.nickname {
+	color: #6a5018;
+	font-size: 18px;
+	font-weight: bold;
+}
+.regist-login {
+	margin-left: 60rpx;
+	margin-top: 30rpx;
+}
+.nav-info {
+	color: #a38e62;
+	font-size: 14px;
+	margin-top: 10rpx;
+}
+
+/* 头部个人信息 end */
+
+/* body中项目 开始 */
+.textwrap{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	font-size: 14px;
+	height: 60px;
+	padding: 0 30rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.leftwrap{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+.leftimg{
+	width: 25px;
+	height: 25px;
+}
+.lefttext{
+	margin-left: 10px;
+	height: 25px;
+	line-height: 25px;
+}
+.rightwrap{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+.righttext{
+	height: 30px;
+	line-height: 30px;
+}
+.you{
+	width: 30px;
+	height: 30px;
+}
+
+/* body中项目 结束 */
+

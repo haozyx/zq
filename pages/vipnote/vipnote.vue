@@ -27,7 +27,7 @@
 			</view>	
 			<view class="t-title">购买方式</view>
 			<view class="cc">添加微信(23ws3w)购买激活码</view>
-			<button type="primary" class="button">直接购买</button>
+			<view class="button">直接购买</view>
 		</view>
 	</view>
 </template>

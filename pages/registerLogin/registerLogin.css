@@ -43,4 +43,14 @@
 	color: #EAEAEA;
 }
 
+.regbutton{
+	background-color:#DC143C;
+	border-radius: 20px;
+	color: #FFFFFF;
+	padding: 20upx;
+	text-align: center;
+	width: 90%;
+	margin-top: 60upx;
+}
+
 /* 注册登录 end */
