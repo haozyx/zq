@@ -42,6 +42,10 @@
             "path" : "pages/vipnote/vipnote",
             "style" : {}
         }
+        ,{
+            "path" : "pages/weburlview/weburlview",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
