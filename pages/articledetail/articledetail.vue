@@ -54,9 +54,8 @@
 				var me = this;
 				
 				uni.showLoading({
-					mask:true,
-					title:'加载中...'
-				})
+					mask:true
+				});
 				
 				uni.request({
 					url: me.webUrl + 'getdetail',
