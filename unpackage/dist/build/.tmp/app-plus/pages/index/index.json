@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "mlist": "/components/mlist/mlist"
+  }
+}

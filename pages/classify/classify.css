@@ -19,7 +19,7 @@
 	height: 40px;
 	background-color: #FFFFFF;
  	position: fixed;
-	top: 45px; 
+	top: 0; 
 	z-index: 100;
 }
 /* 滚动分类 end */
@@ -33,6 +33,6 @@
 	position: fixed;
 	top:0;
 	left: 0;
-	z-index: 101;
+	z-index: 5;
 	background: #FFFFFF;
 }

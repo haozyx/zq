@@ -10,7 +10,7 @@ Vue.prototype.getGlobalUser = function(){
 	if(user!=null && user!=''&&user!=undefined){
 		return user;
 	}else{
-		return '';
+		return null;
 	}
 }
 

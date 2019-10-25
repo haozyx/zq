@@ -4,7 +4,7 @@
 			
 			<input type="text" v-model="code" class="text" placeholder="请填写激活码" placeholder-class="ptext"/>
 				
-			<button type="primary" class="button" @tap="activeuser">激活</button>
+			<view class="button" @tap="activeuser">激活</view>
 		</view>
 	
 	</view>

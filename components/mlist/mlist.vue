@@ -49,11 +49,12 @@
 			    var me = this;
 				
 				var user = me.getGlobalUser();
-				//console.log(user);
-				if(user==''){
+				console.log(user);
+				if(user==null){
 					uni.showModal({
 						title: '您需要注册并成为会员才能查看该内容',
 						showCancel: false,
+						content:'注册并了解如何成为会员',
 						confirmText: '前往注册',
 						confirmColor:'#e05772',
 						success: res => {
