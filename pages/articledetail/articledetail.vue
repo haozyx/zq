@@ -66,6 +66,7 @@
 						if(res.data.code == 200){
 							me.article = res.data.article;
 							me.htmlString = me.article.articleContent;
+							console.info(me.htmlString);
 							//console.info(me.htmlString);
 							uni.setNavigationBarTitle({
 								title: me.article.articleTitle
@@ -95,4 +96,5 @@
 
 <style>
 @import url("articledetail.css");
+@import url("../../components/uParse/src/wxParse.css");
 </style>
