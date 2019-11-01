@@ -55,7 +55,7 @@
 					method: 'GET',
 					data: {id:me.userid,activecode:me.code},
 					success: res => {
-						console.log(res);
+						//console.log(res);
 						if(res.data.code==200){
 							uni.showToast({
 								title:'激活成功',
@@ -64,7 +64,7 @@
 							});
 							setTimeout(()=>{
 								uni.hideLoading();
-								uni.switchTab({
+								uni.reLaunch({
 									url:'../me/me'
 								});
 							},3000);

@@ -66,13 +66,13 @@
 						method: 'POST',
 						data: user,
 						success: res => {
-							// console.log(res);
+							 // console.log(res);
 							uni.hideLoading();
 							if(res.data.code == 200){
 								
 								var user = res.data.user;
-								uni.setStorageSync("globalUser",user);
-								uni.switchTab({
+								uni.setStorageSync("zqglobalUser",user);
+								uni.reLaunch({
 									url:'../me/me'
 								});
 								//如果直接跳转会反生读取不到缓存的问题

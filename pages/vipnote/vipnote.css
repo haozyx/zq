@@ -73,6 +73,10 @@
 .cc{
 	margin: 3px 0;
 }
+.cc-wx{
+	padding: 20upx;
+	text-align: center;
+}
 .addwx{
 	font-size: 14px;
 	text-align: left;

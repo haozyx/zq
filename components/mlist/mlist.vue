@@ -49,8 +49,8 @@
 			    var me = this;
 				
 				var user = me.getGlobalUser();
-				console.log(user);
-				if(user==null){
+				//console.log(user);
+				if(user==''||user ==null){
 					uni.showModal({
 						title: '您需要注册并成为会员才能查看该内容',
 						showCancel: false,

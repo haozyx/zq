@@ -26,8 +26,8 @@
 				<view class="cc">请小伙伴酌情考虑。</view>
 			</view>	
 			<view class="t-title">购买方式</view>
-			<view class="cc">添加微信(23ws3w)购买激活码</view>
-			<view class="button">直接购买</view>
+			<view class="cc-wx">添加微信(w826060882或者a15162086243)购买激活码</view>
+			<view class="button" @tap="buyvip">直接购买</view>
 		</view>
 	</view>
 </template>
@@ -40,7 +40,9 @@
 			}
 		},
 		methods: {
-			
+			buyvip(){
+				plus.runtime.openURL('http://www.admin444.com/P-fcf7ffd8');
+			}
 		}
 	}
 </script>

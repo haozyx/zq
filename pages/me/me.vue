@@ -103,10 +103,10 @@
 			var me = this;
 			// var user = me.getGlobalUser();
 			// 这里不能调用全局方法,会比直接取的慢一点
-			var user = uni.getStorageSync('globalUser');
+			var user = uni.getStorageSync('zqglobalUser');
 			//uni.clearStorage();
-			console.info(user);
-			if(user==null){
+			 
+			if(user=='' || user == null){
 				me.isLogin = false;
 				me.userobj={};
 			}else{
@@ -127,7 +127,7 @@
 						if(res.data.code == 200){
 							var user = res.data.user;
 							me.userobj =user;
-							uni.setStorageSync("globalUser",user);
+							uni.setStorageSync("zqglobalUser",user);
 							//console.log(user);
 						}
 					},
@@ -157,7 +157,7 @@
 			
 			logout(){
 				uni.clearStorageSync();
-				uni.navigateTo({
+				uni.reLaunch({
 					url: '../registerLogin/registerLogin'
 				});
 			}

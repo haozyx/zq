@@ -66,7 +66,6 @@
 						if(res.data.code == 200){
 							me.article = res.data.article;
 							me.htmlString = me.article.articleContent;
-							console.info(me.htmlString);
 							//console.info(me.htmlString);
 							uni.setNavigationBarTitle({
 								title: me.article.articleTitle
@@ -85,10 +84,11 @@
 			},
 			navigate(href, e) {
 				// 如允许点击超链接跳转，则应该打开一个新页面，并传入href，由新页面内嵌webview组件负责显示该链接内容
-				console.log("href: " + href);
-				uni.navigateTo({
+				//console.log("href: " + href);
+				/* uni.navigateTo({
 					url:'../weburlview/weburlview?weburl='+href
-				})
+				}); */
+				plus.runtime.openURL(href);
 			}
 		}
 	}

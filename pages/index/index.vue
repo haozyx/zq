@@ -22,7 +22,8 @@
 		<!-- 显示推荐或者置顶的信息 start-->
 			<mlist :listdata='clist' :hasData="hasData"></mlist>
 		<!-- 显示推荐或者置顶的信息 end-->
-		
+		<!-- 到底部的空白 -->
+		<view class="whitespace"></view>
 	</view>
 </template>
 
@@ -35,7 +36,7 @@
 				isLogin:false,
 				userObj:{},
 				page:1,
-				pagesize:10,
+				pagesize:20,
 				totalpage:0,
 				clist:[],
 				hasData: false,
@@ -62,9 +63,9 @@
 				var me = this;
 				
 				uni.request({
-					url:  me.webUrl +'list',
+					url:  me.webUrl +'getrecommendlist',
 					method: 'GET',
-					data: {page:me.page,pagesize:me.pagesize,category:'3'},
+					data: {page:me.page,pagesize:me.pagesize},
 					success: res => {
 						//console.log(res);
 						if(res.data.code ==200){
@@ -89,12 +90,12 @@
 			}, 
 			getme(){
 				var me = this;
-				var user = me.getGlobalUser();
+				var user_c = me.getGlobalUser();
 				//uni.clearStorage();
 				//console.info(user);
-				if(user){
+				if(user_c){
 					me.isLogin = true;
-					me.userobj = user;
+					me.userobj = user_c;
 					me.validate();  //是会员的话再去校验
 					
 				}else{

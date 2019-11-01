@@ -6,9 +6,9 @@ Vue.prototype.webUrl = 'https://zlhq123.cn/todozq/m/'
 // Vue.prototype.webUrl = 'http://localhost:8085/todozq/m/'
 
 Vue.prototype.getGlobalUser = function(){
-	var user = uni.getStorageSync('globalUser');
-	if(user!=null && user!=''&&user!=undefined){
-		return user;
+	var userobj = uni.getStorageSync('zqglobalUser');
+	if(userobj!=null && userobj!=''&&userobj!=undefined){
+		return userobj;
 	}else{
 		return null;
 	}
